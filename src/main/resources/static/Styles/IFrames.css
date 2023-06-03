@@ -1,0 +1,42 @@
+
+body{
+    background-color: #1E2B32;
+}
+h1{
+    color: white;
+    margin-left: 50px;
+}
+
+.container{
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+.content{
+    color: white;
+    font-weight: 200;
+}
+
+button{
+  background-color:  #2A3942; 
+  border: none;
+  border-radius: 15px;
+  margin: auto;
+  margin-right: 100px;
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.header{
+    display: flex;
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

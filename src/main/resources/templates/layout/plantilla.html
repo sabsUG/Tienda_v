@@ -23,6 +23,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <a th:href="@{/}" class="navbar-brand">
                         [[#{aplicacion.titulo}]]
                     </a> 
+
                     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"> 
                         <span class="navbar-toggler-icon"></span> 
                     </button> 
@@ -38,6 +39,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     [[#{plantilla.productos}]]
                                 </a>
                             </li> 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" 
+                                   data-bs-toggle="dropdown" 
+                                   href="#" 
+                                   role="button" 
+                                   aria-expanded="false">[[#{plantilla.pruebas}]]</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
+                                </ul>
+                            </li>
                             <li class="nav-item px-2">
                                 <a class="nav-menu-link nav-link" th:href="@{/usuario/listado}">
                                     [[#{plantilla.usuarios}]]
@@ -79,8 +90,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
             </div>
         </footer>
-        
-        
+
+
 
         <div>TODO write content</div>
     </body>

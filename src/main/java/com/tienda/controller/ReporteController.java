@@ -7,6 +7,7 @@ package com.tienda.controller;
 import com.tienda.service.ReporteService;
 import jakarta.mail.Quota;
 import java.io.IOException;
+import java.sql.Date;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,8 +52,8 @@ public class ReporteController {
      }
       @GetMapping("/ventasTotales")
       public ResponseEntity<Resource> reporteVentasTotales(
-            @RequestParam String fechaInicio,
-            @RequestParam String fechaFin,
+            @RequestParam Date fechaInicio,
+            @RequestParam Date fechaFin,
             @RequestParam String tipo) throws IOException{
           
         Map<String, Object> parametros = new HashMap();
@@ -61,5 +62,24 @@ public class ReporteController {
         var reporte="ventasTotales";
         return reporteService.generaReporte(reporte, parametros, tipo);
       }
+      
+      @GetMapping("/categoria")
+     public ResponseEntity<Resource> reporteCategorias(@RequestParam String tipo)
+             throws IOException{
+        var reporte = "categoria";
+        return reporteService.generaReporte(reporte, null, tipo);
+     }
      
+     @GetMapping("/ProductsByPrice")
+      public ResponseEntity<Resource> reporteProductosPorPrecio(
+            @RequestParam Float precioInicial,
+            @RequestParam Float precioFinal,
+            @RequestParam String tipo) throws IOException{
+          
+        Map<String, Object> parametros = new HashMap();
+        parametros.put("precioInicial", precioInicial);
+        parametros.put("precioFinal", precioFinal);
+        var reporte="ProductsByPrice";
+        return reporteService.generaReporte(reporte, parametros, tipo);
+      }
 }
